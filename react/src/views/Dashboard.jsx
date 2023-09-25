@@ -1,7 +1,10 @@
+import { PageComponent } from "../components/PageComponent"
 
 
 export const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <PageComponent title="Dashboard">
+      children - dashboard
+    </PageComponent>
   )
 }
