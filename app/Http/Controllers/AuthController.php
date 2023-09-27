@@ -7,12 +7,14 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Sanctum\HasApiTokens;
 
 class AuthController extends Controller
 {
     public function register(RegisterRequest $request){
         $data = $request ->validate();
 
+        /** @var \App\Models\User $ */
         $user = User::create([
             'fname' => $data['fname'],
             'lname' => $data['lname'],
@@ -49,6 +51,7 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request){
+
         $user = Auth::user();
 
         $user->currentAccessToken()->delete();

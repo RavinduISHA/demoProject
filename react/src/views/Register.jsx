@@ -53,7 +53,7 @@ function Register() {
         {error.__html && (<div className="px-3 py-2 text-white bg-red-500 rounded"
         dangerouslySetInnerHTML={error}></div>)}
 
-        <form action="#" onSubmit={onSubmit}>
+        <form action="post" onSubmit={onSubmit}>
           <div className="grid grid-cols-2 gap-5 mt-2">
             <input type="text" placeholder="Firstname" id='first-name' name='firstname' value={fisrtname} onChange={ev => setFirstName(ev.target.value)} className="px-2 py-1 border border-gray-400 rounded" />
             <input type="text" placeholder="Lastname" id='last-name' name='lastname' value={lastname} onChange={ev => setLastName(ev.target.value)} className="px-2 py-1 border border-gray-400 rounded" />
